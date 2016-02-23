@@ -24,8 +24,8 @@ module Refinery
       end
     end
 
-    def respond_to?(method)
-      super || @model.respond_to?(method) || DEFAULT_FIELDS.has_key?(method)
+    def respond_to?(method, include_all = false)
+      super || @model.respond_to?(method, include_all) || DEFAULT_FIELDS.has_key?(method)
     end
 
   end
